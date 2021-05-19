@@ -1,0 +1,17 @@
+{
+  "name": "user",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "D4rknus",
+  "license": "MIT",
+  "scripts": {
+    "dev": "nodemon src/index.js"
+  },
+  "dependencies": {
+    "@grpc/proto-loader": "^0.6.2",
+    "grpc": "^1.24.10"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}
