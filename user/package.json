@@ -9,7 +9,10 @@
   },
   "dependencies": {
     "@grpc/proto-loader": "^0.6.2",
-    "grpc": "^1.24.10"
+    "bcryptjs": "^2.4.3",
+    "grpc": "^1.24.10",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.12.10"
   },
   "devDependencies": {
     "nodemon": "^2.0.7"

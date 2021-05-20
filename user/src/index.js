@@ -1,8 +1,10 @@
 const path = require('path')
-
+const protoLoader = require('@grpc/proto-loader')
 const grpc = require('grpc');
 
-const protoLoader = require('@grpc/proto-loader')
+const implamentation = require('./implementations')
+
+require('./database')
 
 const packageDefinition = protoLoader.loadSync(
     path.resolve(__dirname,'pb','user.proto'),
@@ -15,4 +17,8 @@ const packageDefinition = protoLoader.loadSync(
     });
 const proto= grpc.loadPackageDefinition(packageDefinition);
 
-console.log(proto)
+const server = new grpc.Server()
+
+Object.keys(proto).forEach(key =>{
+    server.addService(proto[key].service, implamentation[key])
+})
